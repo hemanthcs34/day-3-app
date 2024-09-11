@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>webapp </title>
+    </head>
+  
+  <body>
+    <h1>calculate simple interest</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="amount">Number 1:</label>
+        <input type="text" name="amount" id="amount" required /><br /><br />
+
+        <label for="time">Number 2:</label>
+        <input type="text" name="time" id="time" required /><br /><br />
+        
+        <label for="rate">Number 3:</label>
+        <input type="text" name="rate" id="rate" required /><br /><br />
+        
+        <input type="submit" value="calculate" />
+    </form>
+    {% if error %}
+    <p style="colour: red">{{error}}</p>
+    {% endif %} {% if result %}
+    <p style="colur: green">{{result}}</p>
+    {% endif %}
+  </body>
+</html>
